@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		FC8685512D6C303300C1FE48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC8685322D6C303100C1FE48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC8685392D6C303100C1FE48;
+			remoteInfo = YoutubeDislikeChecker;
+		};
+		FC86855B2D6C303300C1FE48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC8685322D6C303100C1FE48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC8685392D6C303100C1FE48;
+			remoteInfo = YoutubeDislikeChecker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC86853A2D6C303100C1FE48 /* YoutubeDislikeChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubeDislikeChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8685502D6C303300C1FE48 /* YoutubeDislikeCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeDislikeCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC86855A2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeDislikeCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FC8685622D6C303300C1FE48 /* Exceptions for "YoutubeDislikeChecker" folder in "YoutubeDislikeChecker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FC8685392D6C303100C1FE48 /* YoutubeDislikeChecker */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FC86853C2D6C303100C1FE48 /* YoutubeDislikeChecker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC8685622D6C303300C1FE48 /* Exceptions for "YoutubeDislikeChecker" folder in "YoutubeDislikeChecker" target */,
+			);
+			path = YoutubeDislikeChecker;
+			sourceTree = "<group>";
+		};
+		FC8685532D6C303300C1FE48 /* YoutubeDislikeCheckerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YoutubeDislikeCheckerTests;
+			sourceTree = "<group>";
+		};
+		FC86855D2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YoutubeDislikeCheckerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC8685372D6C303100C1FE48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86854D2D6C303300C1FE48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC8685572D6C303300C1FE48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC8685312D6C303100C1FE48 = {
+			isa = PBXGroup;
+			children = (
+				FC86853C2D6C303100C1FE48 /* YoutubeDislikeChecker */,
+				FC8685532D6C303300C1FE48 /* YoutubeDislikeCheckerTests */,
+				FC86855D2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests */,
+				FC86853B2D6C303100C1FE48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC86853B2D6C303100C1FE48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC86853A2D6C303100C1FE48 /* YoutubeDislikeChecker.app */,
+				FC8685502D6C303300C1FE48 /* YoutubeDislikeCheckerTests.xctest */,
+				FC86855A2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC8685392D6C303100C1FE48 /* YoutubeDislikeChecker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC8685632D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeChecker" */;
+			buildPhases = (
+				FC8685362D6C303100C1FE48 /* Sources */,
+				FC8685372D6C303100C1FE48 /* Frameworks */,
+				FC8685382D6C303100C1FE48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FC86853C2D6C303100C1FE48 /* YoutubeDislikeChecker */,
+			);
+			name = YoutubeDislikeChecker;
+			packageProductDependencies = (
+			);
+			productName = YoutubeDislikeChecker;
+			productReference = FC86853A2D6C303100C1FE48 /* YoutubeDislikeChecker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC86854F2D6C303300C1FE48 /* YoutubeDislikeCheckerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC8685682D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeCheckerTests" */;
+			buildPhases = (
+				FC86854C2D6C303300C1FE48 /* Sources */,
+				FC86854D2D6C303300C1FE48 /* Frameworks */,
+				FC86854E2D6C303300C1FE48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC8685522D6C303300C1FE48 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FC8685532D6C303300C1FE48 /* YoutubeDislikeCheckerTests */,
+			);
+			name = YoutubeDislikeCheckerTests;
+			packageProductDependencies = (
+			);
+			productName = YoutubeDislikeCheckerTests;
+			productReference = FC8685502D6C303300C1FE48 /* YoutubeDislikeCheckerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC8685592D6C303300C1FE48 /* YoutubeDislikeCheckerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC86856B2D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeCheckerUITests" */;
+			buildPhases = (
+				FC8685562D6C303300C1FE48 /* Sources */,
+				FC8685572D6C303300C1FE48 /* Frameworks */,
+				FC8685582D6C303300C1FE48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC86855C2D6C303300C1FE48 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FC86855D2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests */,
+			);
+			name = YoutubeDislikeCheckerUITests;
+			packageProductDependencies = (
+			);
+			productName = YoutubeDislikeCheckerUITests;
+			productReference = FC86855A2D6C303300C1FE48 /* YoutubeDislikeCheckerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC8685322D6C303100C1FE48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					FC8685392D6C303100C1FE48 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					FC86854F2D6C303300C1FE48 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FC8685392D6C303100C1FE48;
+					};
+					FC8685592D6C303300C1FE48 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FC8685392D6C303100C1FE48;
+					};
+				};
+			};
+			buildConfigurationList = FC8685352D6C303100C1FE48 /* Build configuration list for PBXProject "YoutubeDislikeChecker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC8685312D6C303100C1FE48;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FC86853B2D6C303100C1FE48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC8685392D6C303100C1FE48 /* YoutubeDislikeChecker */,
+				FC86854F2D6C303300C1FE48 /* YoutubeDislikeCheckerTests */,
+				FC8685592D6C303300C1FE48 /* YoutubeDislikeCheckerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC8685382D6C303100C1FE48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86854E2D6C303300C1FE48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC8685582D6C303300C1FE48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC8685362D6C303100C1FE48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86854C2D6C303300C1FE48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC8685562D6C303300C1FE48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC8685522D6C303300C1FE48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC8685392D6C303100C1FE48 /* YoutubeDislikeChecker */;
+			targetProxy = FC8685512D6C303300C1FE48 /* PBXContainerItemProxy */;
+		};
+		FC86855C2D6C303300C1FE48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC8685392D6C303100C1FE48 /* YoutubeDislikeChecker */;
+			targetProxy = FC86855B2D6C303300C1FE48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC8685642D6C303300C1FE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YoutubeDislikeChecker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC8685652D6C303300C1FE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YoutubeDislikeChecker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC8685662D6C303300C1FE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC8685672D6C303300C1FE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC8685692D6C303300C1FE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeCheckerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoutubeDislikeChecker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YoutubeDislikeChecker";
+			};
+			name = Debug;
+		};
+		FC86856A2D6C303300C1FE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeCheckerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoutubeDislikeChecker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YoutubeDislikeChecker";
+			};
+			name = Release;
+		};
+		FC86856C2D6C303300C1FE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeCheckerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YoutubeDislikeChecker;
+			};
+			name = Debug;
+		};
+		FC86856D2D6C303300C1FE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89457VG9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elvis.YoutubeDislikeCheckerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YoutubeDislikeChecker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC8685352D6C303100C1FE48 /* Build configuration list for PBXProject "YoutubeDislikeChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8685662D6C303300C1FE48 /* Debug */,
+				FC8685672D6C303300C1FE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC8685632D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8685642D6C303300C1FE48 /* Debug */,
+				FC8685652D6C303300C1FE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC8685682D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeCheckerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8685692D6C303300C1FE48 /* Debug */,
+				FC86856A2D6C303300C1FE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC86856B2D6C303300C1FE48 /* Build configuration list for PBXNativeTarget "YoutubeDislikeCheckerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC86856C2D6C303300C1FE48 /* Debug */,
+				FC86856D2D6C303300C1FE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC8685322D6C303100C1FE48 /* Project object */;
+}
