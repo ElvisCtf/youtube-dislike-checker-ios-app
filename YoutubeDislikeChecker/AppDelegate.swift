@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  YoutubeDislikeChecker
 //
-//  Created by Elvis Cheng (ESD - Senior Mobile App Developer, Digital Solutions) on 24/2/2025.
+//  Created by Elvis Cheng on 24/2/2025.
 //
 
 import UIKit
