@@ -10,6 +10,7 @@
 		FC8685832D6C4BD600C1FE48 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = FC8685822D6C4BD600C1FE48 /* RxBlocking */; };
 		FC8685852D6C4BD600C1FE48 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FC8685842D6C4BD600C1FE48 /* RxCocoa */; };
 		FC8685872D6C4BD600C1FE48 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC8685862D6C4BD600C1FE48 /* RxRelay */; };
+		FC86858A2D6C4BFA00C1FE48 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC8685892D6C4BFA00C1FE48 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8685872D6C4BD600C1FE48 /* RxRelay in Frameworks */,
+				FC86858A2D6C4BFA00C1FE48 /* SnapKit in Frameworks */,
 				FC8685852D6C4BD600C1FE48 /* RxCocoa in Frameworks */,
 				FC8685832D6C4BD600C1FE48 /* RxBlocking in Frameworks */,
 			);
@@ -137,6 +139,7 @@
 				FC8685822D6C4BD600C1FE48 /* RxBlocking */,
 				FC8685842D6C4BD600C1FE48 /* RxCocoa */,
 				FC8685862D6C4BD600C1FE48 /* RxRelay */,
+				FC8685892D6C4BFA00C1FE48 /* SnapKit */,
 			);
 			productName = YoutubeDislikeChecker;
 			productReference = FC86853A2D6C303100C1FE48 /* YoutubeDislikeChecker.app */;
@@ -222,6 +225,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FC8685812D6C4BD600C1FE48 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FC8685882D6C4BFA00C1FE48 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC86853B2D6C303100C1FE48 /* Products */;
@@ -592,6 +596,14 @@
 				minimumVersion = 6.9.0;
 			};
 		};
+		FC8685882D6C4BFA00C1FE48 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -609,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC8685812D6C4BD600C1FE48 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
+		};
+		FC8685892D6C4BFA00C1FE48 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8685882D6C4BFA00C1FE48 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
