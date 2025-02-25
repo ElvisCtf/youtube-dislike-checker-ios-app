@@ -7,16 +7,22 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class CheckerView: UIView {
+    private let viewModel: CheckerViewModel
     private let textField = BorderTextField(id: UI.textField.id, hint: "Enter URL", fontTuple: (18, .regular))
     private let checkButton = UIButton.filled(id: UI.checkButton.id, text: "CHECK", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemRed)
     private let resultView = ResultView()
+    private let disposeBag = DisposeBag()
     
-    init() {
+    init(with viewModel: CheckerViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         setUI()
         setLayout()
+        setBinding()
     }
     
     private func setUI() {
@@ -44,6 +50,35 @@ final class CheckerView: UIView {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(checkButton.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
+        }
+    }
+    
+    private func setBinding() {
+        checkButton.rx.tap
+            .throttle(.seconds(5), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] in
+                guard let self else { return }
+                self.viewModel.getVideoStats(with: textField.text ?? "")
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.videoStatsObservable
+            .subscribe(onNext: { [weak self] stats in
+                guard let self else { return }
+                self.showResult(with: stats)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func showResult(with stats: VideoStatsModel) {
+        if let likes = stats.likes, let dislikes = stats.dislikes, let viewCount = stats.viewCount {
+            DispatchQueue.main.async {
+                self.resultView.setText(
+                    like: likes.withCommas(),
+                    dislike: dislikes.withCommas(),
+                    viewCount: viewCount.withCommas()
+                )
+            }
         }
     }
     

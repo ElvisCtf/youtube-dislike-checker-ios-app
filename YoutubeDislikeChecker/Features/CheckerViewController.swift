@@ -8,12 +8,12 @@
 import UIKit
 
 class CheckerViewController: UIViewController {
-    private lazy var checkerView = CheckerView()
+    private let viewModel = CheckerViewModel()
+    private lazy var checkerView = CheckerView(with: viewModel)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view = checkerView
     }
-
 }
 
