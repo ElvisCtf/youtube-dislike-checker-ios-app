@@ -71,7 +71,7 @@ extension UITextField {
 
 // MARK: - UIButton
 extension UIButton {
-    static func filled(id: String = "", text: String? = "", fontTuple: FontTuple, textColor: UIColor, bgColor: UIColor, cornerRadius: CGFloat = 4.0, padding: UIEdgeInsets = UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)) -> UIButton {
+    static func filled(id: String = "", text: String? = "", fontTuple: FontTuple, textColor: UIColor, bgColor: UIColor, cornerRadius: CGFloat = 4.0, padding: UIEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)) -> UIButton {
         let btn = UIButton(frame: .zero)
         btn.addAccessibilityID(id)
         btn.setTitleColor(textColor, for: .normal)
