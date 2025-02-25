@@ -9,8 +9,9 @@ import UIKit
 import SnapKit
 
 final class CheckerView: UIView {
-    private let textField = BorderTextField(id: UI.textField.id, hint: "Enter URL", fontTuple: (18.0, .regular))
-    private let checkButton = UIButton.filled(id: UI.checkButton.id, text: "CHECK", fontTuple: (18.0, .semibold), textColor: .white, bgColor: .systemRed)
+    private let textField = BorderTextField(id: UI.textField.id, hint: "Enter URL", fontTuple: (18, .regular))
+    private let checkButton = UIButton.filled(id: UI.checkButton.id, text: "CHECK", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemRed)
+    private let resultView = ResultView()
     
     init() {
         super.init(frame: .zero)
@@ -25,6 +26,7 @@ final class CheckerView: UIView {
     private func setLayout() {
         addSubview(textField)
         addSubview(checkButton)
+        addSubview(resultView)
         
         textField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -35,6 +37,12 @@ final class CheckerView: UIView {
         checkButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(textField.snp.bottom).offset(24)
+            $0.left.right.equalToSuperview().inset(16)
+        }
+        
+        resultView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(checkButton.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
         }
     }
