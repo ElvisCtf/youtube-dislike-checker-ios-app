@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 typealias FontTuple = (CGFloat, UIFont.Weight)
 
@@ -20,6 +21,28 @@ extension UILabel {
         lbl.textColor = color
         lbl.text = text
         return lbl
+    }
+    
+    static func withIcon(imgName: String, imgSize: CGFloat, imgColor: UIColor, spacing: CGFloat, lbl: UILabel) -> UIView {
+        let view = UIView(frame: .zero)
+        let img = UIImageView(image: UIImage(systemName: imgName))
+        img.contentMode = .scaleAspectFit
+        img.tintColor = imgColor
+        view.addSubview(img)
+        view.addSubview(lbl)
+        
+        img.snp.makeConstraints {
+            $0.left.top.bottom.equalToSuperview()
+            $0.size.equalTo(imgSize)
+        }
+        
+        lbl.snp.makeConstraints {
+            $0.centerY.equalTo(img.snp.centerY)
+            $0.left.equalTo(img.snp.right).offset(spacing)
+            $0.right.equalToSuperview()
+        }
+        
+        return view
     }
 }
 
@@ -62,14 +85,41 @@ extension UIButton {
 }
 
 
+// MARK: - UIStackView
+extension UIStackView {
+    func setAsVstack(spacing: CGFloat, padding: UIEdgeInsets) {
+        self.axis = .vertical
+        self.spacing = spacing
+        self.layoutMargins = padding
+        self.isLayoutMarginsRelativeArrangement = true
+    }
+    
+    func setAsHstack(spacing: CGFloat, padding: UIEdgeInsets) {
+        self.axis = .horizontal
+        self.spacing = spacing
+        self.layoutMargins = padding
+        self.isLayoutMarginsRelativeArrangement = true
+    }
+    
+    func addSubviews(_ views: [UIView]) {
+        for view in views {
+            self.addArrangedSubview(view)
+        }
+    }
+}
+
+
 // MARK: - UIView
 extension UIView {
-    static func plain(cornerRadius: CGFloat = 0, isClipsToBounds: Bool = false, bgColor: UIColor = .clear) -> UIView {
+    static func plain(cornerRadius: CGFloat = 0, bgColor: UIColor = .clear, corner: ViewCorner? = nil) -> UIView {
         let v = UIView()
         if cornerRadius > 0 {
             v.layer.cornerRadius = cornerRadius
+            v.clipsToBounds = true
+            if let corner {
+                v.layer.maskedCorners = corner.value
+            }
         }
-        v.clipsToBounds = isClipsToBounds
         v.backgroundColor = bgColor
         return v
     }
@@ -77,6 +127,21 @@ extension UIView {
     func addAccessibilityID(_ id: String) {
         if !id.isEmpty {
             self.accessibilityIdentifier = id
+        }
+    }
+}
+
+
+enum ViewCorner {
+    case top
+    case bottom
+    
+    var value: CACornerMask {
+        switch self {
+        case .top:
+            [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        case .bottom:
+            [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         }
     }
 }
