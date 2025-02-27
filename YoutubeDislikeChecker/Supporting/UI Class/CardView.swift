@@ -28,7 +28,6 @@ class CardView: UIView {
         layer.cornerRadius = 8
         clipsToBounds = true
         headerLabel.text = title
-        bodyView.isHidden = true
     }
     
     private func setLayout() {
@@ -43,8 +42,7 @@ class CardView: UIView {
         }
         
         headerLabel.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(8)
-            $0.left.right.equalToSuperview().inset(16)
+            $0.edges.equalToSuperview().inset(16)
         }
         
         containerView.snp.makeConstraints {
@@ -57,19 +55,9 @@ class CardView: UIView {
         }
     }
     
-    func showBody() {
-        UIView.transition(with: bodyView, duration: 0.4,
-                          options: .transitionCurlDown,
-                          animations: {
-            self.bodyView.isHidden = false
-        })
-    }
-    
-    func hideBody() {
-        UIView.transition(with: bodyView, duration: 0.4,
-                          options: .transitionCurlUp,
-                          animations: {
-            self.bodyView.isHidden = true
+    func toggleVisibility() {
+        UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.isHidden.toggle()
         })
     }
     

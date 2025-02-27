@@ -56,7 +56,7 @@ final class CheckerView: UIView {
         
         resultView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(errorView.snp.bottom).offset(24)
+            $0.top.equalTo(checkButton.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
         }
     }
@@ -84,20 +84,16 @@ final class CheckerView: UIView {
     }
     
     private func showStats(_ stats: VideoStatsModel) {
-        if let likes = stats.likes, let dislikes = stats.dislikes, let viewCount = stats.viewCount {
-            DispatchQueue.main.async {
-                self.resultView.setText(
-                    like: likes.withCommas(),
-                    dislike: dislikes.withCommas(),
-                    viewCount: viewCount.withCommas()
-                )
-                self.errorView.setText(message: "")
-            }
+        print("monke \(stats)")
+        DispatchQueue.main.async {
+            self.errorView.setText(message: nil)
+            self.resultView.setText(stats)
         }
     }
     
     private func showError(_ error: Error) {
         DispatchQueue.main.async {
+            self.resultView.setText(nil)
             self.errorView.setText(message: error.localizedDescription)
         }
     }
