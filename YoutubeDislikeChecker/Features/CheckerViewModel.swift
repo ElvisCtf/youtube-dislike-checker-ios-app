@@ -23,12 +23,16 @@ final class CheckerViewModel {
         apiService.getVideoStats(with: videoID) { [weak self] success, data, error in
             guard let self else { return }
             if success {
-                if let data {
+                if let data, !data.isNil() {
                     self.videoStatsObservable.accept(.success(data))
+                } else {
+                    self.videoStatsObservable.accept(.failure(APIError.noData))
                 }
             } else {
                 if let error {
                     self.videoStatsObservable.accept(.failure(error))
+                } else {
+                    self.videoStatsObservable.accept(.failure(APIError.noData))
                 }
             }
         }

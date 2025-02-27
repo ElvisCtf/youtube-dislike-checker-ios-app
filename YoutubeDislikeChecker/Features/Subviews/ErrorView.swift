@@ -29,24 +29,25 @@ final class ErrorView: UIView {
         addSubview(iconLabel)
         iconLabel.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(16)
-            $0.height.equalTo(0)
         }
     }
     
     func setText(message: String?) {
         messageLabel.text = message
-        toggleVisibility()
+        if message != nil {
+            if isHidden {
+                toggleVisibility()
+            }
+        } else {
+            if !isHidden {
+                toggleVisibility()
+            }
+        }
     }
     
     private func toggleVisibility() {
         UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.isHidden.toggle()
-            self.iconLabel.snp.remakeConstraints {
-                $0.edges.equalToSuperview().inset(16)
-                if self.isHidden {
-                    $0.height.equalTo(0)
-                }
-            }
         })
     }
     

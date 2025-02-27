@@ -11,4 +11,14 @@ struct VideoStatsModel: Codable {
     let rating: Double?
     let viewCount: Int?
     let deleted: Bool?
+    
+    func isNil() -> Bool {
+        return id == nil &&
+        dateCreated == nil &&
+        likes == nil &&
+        dislikes == nil &&
+        rating == nil &&
+        viewCount == nil &&
+        deleted == nil
+    }
 }
