@@ -10,23 +10,25 @@ import RxCocoa
 import Foundation
 
 final class CheckerViewModel {
-    let videoStatsObservable = PublishRelay<VideoStatsModel>()
+    let videoStatsObservable = PublishRelay<Result<VideoStatsModel, Error>>()
     
     private let apiService: APIServiceProtocol
     
     init(apiServie: APIService = APIService()) {
         self.apiService = apiServie
-        
     }
     
     func getVideoStats(with url: String) {
-        if let videoID = extractYouTubeID(from: url) {
-            apiService.getVideoStats(with: videoID) { [weak self] success, data, error in
-                guard let self else { return }
-                if success {
-                    if let data {
-                        self.videoStatsObservable.accept(data)
-                    }
+        let videoID = extractYouTubeID(from: url)
+        apiService.getVideoStats(with: videoID) { [weak self] success, data, error in
+            guard let self else { return }
+            if success {
+                if let data {
+                    self.videoStatsObservable.accept(.success(data))
+                }
+            } else {
+                if let error {
+                    self.videoStatsObservable.accept(.failure(error))
                 }
             }
         }

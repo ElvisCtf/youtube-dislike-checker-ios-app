@@ -15,6 +15,7 @@ final class CheckerView: UIView {
     private let textField = BorderTextField(id: UI.textField.id, hint: "Enter URL", fontTuple: (18, .regular))
     private let checkButton = UIButton.filled(id: UI.checkButton.id, text: "CHECK", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemRed)
     private let resultView = ResultView()
+    private let errorView = ErrorView()
     private let disposeBag = DisposeBag()
     
     init(with viewModel: CheckerViewModel) {
@@ -32,6 +33,7 @@ final class CheckerView: UIView {
     private func setLayout() {
         addSubview(textField)
         addSubview(checkButton)
+        addSubview(errorView)
         addSubview(resultView)
         
         textField.snp.makeConstraints {
@@ -46,9 +48,15 @@ final class CheckerView: UIView {
             $0.left.right.equalToSuperview().inset(16)
         }
         
-        resultView.snp.makeConstraints {
+        errorView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(checkButton.snp.bottom).offset(24)
+            $0.left.right.equalToSuperview().inset(16)
+        }
+        
+        resultView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(errorView.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
         }
     }
@@ -63,14 +71,19 @@ final class CheckerView: UIView {
             .disposed(by: disposeBag)
         
         viewModel.videoStatsObservable
-            .subscribe(onNext: { [weak self] stats in
+            .subscribe(onNext: { [weak self] result in
                 guard let self else { return }
-                self.showResult(with: stats)
+                switch result {
+                case .success(let stats):
+                    self.showStats(stats)
+                case .failure(let error):
+                    self.showError(error)
+                }
             })
             .disposed(by: disposeBag)
     }
     
-    private func showResult(with stats: VideoStatsModel) {
+    private func showStats(_ stats: VideoStatsModel) {
         if let likes = stats.likes, let dislikes = stats.dislikes, let viewCount = stats.viewCount {
             DispatchQueue.main.async {
                 self.resultView.setText(
@@ -78,7 +91,14 @@ final class CheckerView: UIView {
                     dislike: dislikes.withCommas(),
                     viewCount: viewCount.withCommas()
                 )
+                self.errorView.setText(message: "")
             }
+        }
+    }
+    
+    private func showError(_ error: Error) {
+        DispatchQueue.main.async {
+            self.errorView.setText(message: error.localizedDescription)
         }
     }
     
