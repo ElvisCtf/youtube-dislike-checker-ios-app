@@ -23,20 +23,20 @@ extension UILabel {
         return lbl
     }
     
-    static func withIcon(imgName: String, imgSize: CGFloat, imgColor: UIColor, spacing: CGFloat, lbl: UILabel) -> UIView {
+    func withIcon(imgName: String, imgSize: CGFloat, imgColor: UIColor, spacing: CGFloat) -> UIView {
         let view = UIView(frame: .zero)
         let img = UIImageView(image: UIImage(systemName: imgName))
         img.contentMode = .scaleAspectFit
         img.tintColor = imgColor
         view.addSubview(img)
-        view.addSubview(lbl)
+        view.addSubview(self)
         
         img.snp.makeConstraints {
             $0.left.top.bottom.equalToSuperview()
             $0.size.equalTo(imgSize)
         }
         
-        lbl.snp.makeConstraints {
+        self.snp.makeConstraints {
             $0.centerY.equalTo(img.snp.centerY)
             $0.left.equalTo(img.snp.right).offset(spacing)
             $0.right.equalToSuperview()

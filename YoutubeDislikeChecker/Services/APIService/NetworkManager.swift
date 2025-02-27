@@ -19,12 +19,12 @@ final class NetworkManager {
     func send<T: Decodable>(with request: URLRequest, as type: T.Type) -> Single<T> {
         return Single<T>.create { observer in
             let task = self.session.dataTask(with: request) { data, response, error in
-                if let error {
-                    observer(.failure(error))
+                if error != nil {
+                    observer(.failure(APIError.invalidVideoID))
                 } else if let data {
                     observer(data.decode(as: T.self))
                 } else {
-                    observer(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+                    observer(.failure(APIError.noData))
                 }
             }
             task.resume()
@@ -41,7 +41,7 @@ extension Data {
             let decodedObject = try decoder.decode(T.self, from: self)
             return .success(decodedObject)
         } catch let decodingError {
-            return .failure(decodingError)
+            return .failure(APIError.decodeFailed)
         }
     }
 }

@@ -9,13 +9,18 @@ import Foundation
 import RxSwift
 
 protocol APIServiceProtocol: AnyObject {
-    func getVideoStats(with videoID: String, completion: @escaping (Bool, VideoStatsModel?, Error?) -> Void)
+    func getVideoStats(with videoID: String?, completion: @escaping (Bool, VideoStatsModel?, Error?) -> Void)
 }
 
 final class APIService: APIServiceProtocol {
     private let disposeBag = DisposeBag()
     
-    func getVideoStats(with videoID: String, completion: @escaping (Bool, VideoStatsModel?, Error?) -> Void) {
+    func getVideoStats(with videoID: String?, completion: @escaping (Bool, VideoStatsModel?, Error?) -> Void) {
+        guard let videoID else {
+            completion(false, nil, APIError.invalidVideoID)
+            return
+        }
+        
         let request = APIRequest(parameters: ["videoId": videoID]).make(with: Endpoints.videoStatsURL)
         NetworkManager.shared
             .send(with: request, as: VideoStatsModel.self)

@@ -18,9 +18,9 @@ final class ResultView: CardView {
         stack.setAsVstack(spacing: 16, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         
         stack.addSubviews([
-            UILabel.withIcon(imgName: "eye", imgSize: 24, imgColor: .label, spacing: 8, lbl: viewLabel),
-            UILabel.withIcon(imgName: "hand.thumbsup", imgSize: 24, imgColor: .label, spacing: 8, lbl: likeLabel),
-            UILabel.withIcon(imgName: "hand.thumbsdown", imgSize: 24, imgColor: .label, spacing: 8, lbl: dislikeLabel)
+            viewLabel.withIcon(imgName: "eye", imgSize: 24, imgColor: .label, spacing: 8),
+            likeLabel.withIcon(imgName: "hand.thumbsup", imgSize: 24, imgColor: .label, spacing: 8),
+            dislikeLabel.withIcon(imgName: "hand.thumbsdown", imgSize: 24, imgColor: .label, spacing: 8)
         ])
         
         super.init(title: "Result", bodyView: stack)
@@ -30,6 +30,7 @@ final class ResultView: CardView {
         viewLabel.text = "\(viewCount) views"
         likeLabel.text = "\(like) likes"
         dislikeLabel.text = "\(dislike) dislikes"
+        showBody()
     }
     
     required init(coder: NSCoder) {
