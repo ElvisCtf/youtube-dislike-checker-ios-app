@@ -109,6 +109,29 @@ extension UIStackView {
 }
 
 
+// MARK: - UIProgressView
+extension UIActivityIndicatorView {
+    static func make(style: UIActivityIndicatorView.Style, color: UIColor) -> UIActivityIndicatorView {
+        let aiv = UIActivityIndicatorView(frame: .zero)
+        aiv.style = style
+        aiv.color = color
+        return aiv
+    }
+    
+    func start() {
+        DispatchQueue.main.async {
+            self.startAnimating()
+        }
+    }
+    
+    func stop() {
+        DispatchQueue.main.async {
+            self.stopAnimating()
+        }
+    }
+}
+
+
 // MARK: - UIView
 extension UIView {
     static func plain(cornerRadius: CGFloat = 0, bgColor: UIColor = .clear, corner: ViewCorner? = nil) -> UIView {
