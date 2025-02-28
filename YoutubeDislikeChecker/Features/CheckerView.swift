@@ -109,8 +109,9 @@ final class CheckerView: UIView {
     }
     
     private func getStats(with URL: String) {
-        self.viewModel.getVideoStats(with: URL)
         progressView.start()
+        self.viewModel.getVideoStats(with: URL)
+        
     }
     
     private func showStats(_ stats: VideoStatsModel) {
@@ -130,8 +131,8 @@ final class CheckerView: UIView {
     func setURL(_ url: String) {
         DispatchQueue.main.async {
             self.textField.text = url
-            self.getStats(with: url)
         }
+        self.getStats(with: url)
     }
     
     required init?(coder: NSCoder) {
