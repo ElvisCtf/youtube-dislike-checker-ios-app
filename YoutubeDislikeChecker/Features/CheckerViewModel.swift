@@ -5,9 +5,10 @@
 //  Created by Elvis Cheng on 25/2/2025.
 //
 
+import Foundation
 import RxSwift
 import RxCocoa
-import Foundation
+import UniformTypeIdentifiers
 
 final class CheckerViewModel {
     let videoStatsObservable = PublishRelay<Result<VideoStatsModel, Error>>()

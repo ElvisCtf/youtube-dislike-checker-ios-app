@@ -16,7 +16,9 @@ final class CheckerView: UIView {
     private let checkButton = UIButton.filled(id: UI.checkButton.id, text: "CHECK", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemRed)
     private let resultView = ResultView()
     private let errorView = ErrorView()
+    private let progressView = UIActivityIndicatorView.make(style: .large, color: .systemRed)
     private let disposeBag = DisposeBag()
+    
     let closeButton = UIButton.filled(id: UI.closeButton.id, text: "close", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemBlue)
     var onClose: (() -> Void)? = nil
     
@@ -39,6 +41,7 @@ final class CheckerView: UIView {
         addSubview(errorView)
         addSubview(resultView)
         addSubview(closeButton)
+        addSubview(progressView)
         
         textField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -76,6 +79,10 @@ final class CheckerView: UIView {
                 self.onClose?()
             })
             .disposed(by: disposeBag)
+        
+        progressView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
     
     private func setBinding() {
@@ -83,13 +90,14 @@ final class CheckerView: UIView {
             .throttle(.seconds(5), scheduler: MainScheduler.instance)
             .bind(onNext: { [weak self] in
                 guard let self else { return }
-                self.viewModel.getVideoStats(with: textField.text ?? "")
+                self.getStats(with: textField.text ?? "")
             })
             .disposed(by: disposeBag)
         
         viewModel.videoStatsObservable
             .subscribe(onNext: { [weak self] result in
                 guard let self else { return }
+                self.progressView.stop()
                 switch result {
                 case .success(let stats):
                     self.showStats(stats)
@@ -98,6 +106,11 @@ final class CheckerView: UIView {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func getStats(with URL: String) {
+        self.viewModel.getVideoStats(with: URL)
+        progressView.start()
     }
     
     private func showStats(_ stats: VideoStatsModel) {
@@ -117,7 +130,7 @@ final class CheckerView: UIView {
     func setURL(_ url: String) {
         DispatchQueue.main.async {
             self.textField.text = url
-            self.viewModel.getVideoStats(with: url)
+            self.getStats(with: url)
         }
     }
     
