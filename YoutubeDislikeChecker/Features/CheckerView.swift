@@ -17,6 +17,8 @@ final class CheckerView: UIView {
     private let resultView = ResultView()
     private let errorView = ErrorView()
     private let disposeBag = DisposeBag()
+    let closeButton = UIButton.filled(id: UI.closeButton.id, text: "close", fontTuple: (18, .semibold), textColor: .white, bgColor: .systemBlue)
+    var onClose: (() -> Void)? = nil
     
     init(with viewModel: CheckerViewModel) {
         self.viewModel = viewModel
@@ -28,6 +30,7 @@ final class CheckerView: UIView {
     
     private func setUI() {
         backgroundColor = .systemBackground
+        closeButton.isHidden = true
     }
     
     private func setLayout() {
@@ -35,6 +38,7 @@ final class CheckerView: UIView {
         addSubview(checkButton)
         addSubview(errorView)
         addSubview(resultView)
+        addSubview(closeButton)
         
         textField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -59,6 +63,19 @@ final class CheckerView: UIView {
             $0.top.equalTo(checkButton.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
         }
+        
+        closeButton.snp.makeConstraints {
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(16)
+            $0.left.right.equalToSuperview().inset(16)
+        }
+        
+        closeButton.rx.tap
+            .throttle(.seconds(5), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] in
+                guard let self else { return }
+                self.onClose?()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setBinding() {
@@ -84,7 +101,6 @@ final class CheckerView: UIView {
     }
     
     private func showStats(_ stats: VideoStatsModel) {
-        print("monke \(stats)")
         DispatchQueue.main.async {
             self.errorView.setText(message: nil)
             self.resultView.setText(stats)
@@ -95,6 +111,13 @@ final class CheckerView: UIView {
         DispatchQueue.main.async {
             self.resultView.setText(nil)
             self.errorView.setText(message: error.localizedDescription)
+        }
+    }
+    
+    func setURL(_ url: String) {
+        DispatchQueue.main.async {
+            self.textField.text = url
+            self.viewModel.getVideoStats(with: url)
         }
     }
     
@@ -109,6 +132,7 @@ extension CheckerView {
     private enum UI: String {
         case textField   = "CheckerView_TextField"
         case checkButton = "CheckerView_CheckButton"
+        case closeButton = "CheckerView_CloseButton"
         
         var id: String {
             return rawValue
