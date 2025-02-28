@@ -115,6 +115,7 @@ extension UIActivityIndicatorView {
         let aiv = UIActivityIndicatorView(frame: .zero)
         aiv.style = style
         aiv.color = color
+        aiv.hidesWhenStopped = true
         return aiv
     }
     
