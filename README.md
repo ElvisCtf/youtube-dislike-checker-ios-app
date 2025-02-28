@@ -26,7 +26,7 @@ YT Dislike Viewer let us check youtube video like, dislike and view count conven
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/ElvisCtf/weather-ios-app.git
+    git clone https://github.com/ElvisCtf/youtube-dislike-checker-ios-app.git
     ```
 2. Build and run
 
